@@ -397,10 +397,19 @@ nav .fa-solid{
 }
 
 @media only screen and (max-width: 600px){
+    
+    #header {
+        background-image: url(images/backgroundMobile.png);
+    }
+    
     .headerText{
         margin-left: 15px;
         margin-top: 100%;
         font-size: 15px;
+    }
+
+    .headerText p {
+        font-size: 13.5px;
     }
 
     .headerText h1{
