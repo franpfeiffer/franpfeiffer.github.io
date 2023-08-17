@@ -2,10 +2,10 @@ var tablinks = document.getElementsByClassName("tabLinks");
 var tabcontents = document.getElementsByClassName("tabContents");
 
 function opentab(tabname) {
-    for(tablink of tablinks) {
+    for (tablink of tablinks) {
         tablink.classList.remove("activeLink");
     }
-    for(tabcontent of tabcontents) {
+    for (tabcontent of tabcontents) {
         tabcontent.classList.remove("activeTab");
     }
     event.currentTarget.classList.add("activeLink");
@@ -15,11 +15,11 @@ function opentab(tabname) {
 
 var sidemenu = document.getElementById("sidemenu");
 
-function openmenu(){
+function openmenu() {
     sidemenu.style.right = "0";
 }
 
-function closemenu(){
+function closemenu() {
     sidemenu.style.right = "-180px";
 }
 
@@ -30,15 +30,15 @@ const msg = document.getElementById("msg")
 
 form.addEventListener('submit', e => {
     e.preventDefault()
-    fetch(scriptURL, { method: 'POST', body: new FormData(form)})
-      .then(response => {
-        msg.innerHTML = "Your information has been succesfully submited!"
-        setTimeout(function(){
-            msg.innerHTML = "";
-        }, 5000)
-        form.reset();
-      })
-      .catch(error => console.error('Error!', error.message))
+    fetch(scriptURL, { method: 'POST', body: new FormData(form) })
+        .then(response => {
+            msg.innerHTML = "Your information has been succesfully submited!"
+            setTimeout(function () {
+                msg.innerHTML = "";
+            }, 5000)
+            form.reset();
+        })
+        .catch(error => console.error('Error!', error.message))
 })
 
 

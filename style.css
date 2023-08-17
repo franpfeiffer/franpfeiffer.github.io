@@ -5,18 +5,20 @@
 
 html {
     scroll-behavior: smooth;
+    height: 100%;
 }
 
 body{
     background-color: #080808;  
     color: #fff;
+    height: 100%;
 }
 
 #header{
     width: 100%;
-    height: 100vh;
+    height: 100%;
     background-image: url(images/backgroundPhoto.png);
-    background-size: auto;
+    background-size: cover;
     background-position: center;
 }
 
@@ -128,12 +130,16 @@ nav ul li a:hover::after{
     text-align: justify;
 }
 
+.aboutCol2 p {
+    line-height: 1.5;
+    letter-spacing: 1px;
+}
+
 .subTitle {
     font-size: 60px;
     font-weight: 600;
     color: #fff;
 }
-
 
 .tabTitles {
     display: flex;
@@ -235,14 +241,18 @@ nav ul li a:hover::after{
 }
 
 .servicesList div:hover {
-    background: #ff004f;
+    background: #ff004f; 
     transform: translateY(-10px);
 }
 
 /*---------------portfolio-------------------*/
 
-#portfolio {
-    padding: 70px 0;
+#portfolio {  
+    margin: 0;
+    min-height: 100vh;
+    display: grid;
+    grid-auto-flow: column;
+    place-content: center;
 }
 
 .subTitle3 {
@@ -253,22 +263,24 @@ nav ul li a:hover::after{
 }
 
 .work {
-    background: #262626;
+    background: #111111;
     padding: 40px;
     font-size: 16px;
     font-weight: 400;
     border-radius: 7px;
     transition: background 0.5s, transform 0.5s;
-    display: grid;
     grid-gap: 40px;
     margin-top: 50px;
     margin-right: 85px;
     margin-left: 85px;
     text-align: justify;
+    display: grid; /* Cambia de "display: flex" a "display: grid" */
+    grid-template-columns: repeat(3, 1fr); /* Tres columnas en una línea */
+    grid-gap: 40px;
 }
 
 .work:hover {
-    background: #ff004f;
+    background: #262626;
     transform: translateY(-10px);
 }
 
@@ -279,14 +291,161 @@ nav ul li a:hover::after{
 
 .work a {
     text-decoration: none;
+    text-align: left;
     color: #fff;
     font-weight: 650;
     transition: color 0.5s, transform 0.5s;
 }
 
 .work a:hover {
-    color: #000
+    color: #ff004f
 }
+
+.work2 {
+    background: #111111;
+    padding: 40px;
+    font-size: 16px;
+    font-weight: 400;
+    border-radius: 7px;
+    transition: background 0.5s, transform 0.5s;
+    display: flex;
+    grid-gap: 40px;
+    margin-top: 50px;
+    margin-right: 85px;
+    margin-left: 85px;
+    text-align: justify;
+}
+
+.work2:hover {
+    background: #262626;
+    transform: translateY(-10px);
+}
+
+.work2 i {
+    font-size: 70px;
+    margin-bottom: 0px;
+}
+
+.work2 a {
+    text-decoration: none;
+    color: #fff;
+    font-weight: 650;
+    transition: color 0.5s, transform 0.5s;
+}
+
+.work2 a:hover {
+    color: #ff004f
+}
+
+
+
+
+/* Estilos para el contenedor de la figura */
+figure {
+  display: grid;
+  border-radius: 1rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+
+.small-image {
+    width: 300px; /* Ancho de 300px */
+    height: 250px; /* Alto de 250px */
+    background-image: url(images/spotifySearcher.png); /* Usar la imagen como fondo */
+    background-size: cover; /* Ajustar el tamaño del fondo */
+    background-position: center; /* Posición del fondo */
+    background-repeat: no-repeat; /* Evitar la repetición de la imagen */
+}
+
+.small-image2 {
+    width: 300px; /* Ancho de 300px */
+    height: 250px; /* Alto de 250px */
+    background-image: url(images/rockPaperScissors.jpg); /* Usar la imagen como fondo */
+    background-size: cover; /* Ajustar el tamaño del fondo */
+    background-position: center; /* Posición del fondo */
+    background-repeat: no-repeat; /* Evitar la repetición de la imagen */
+}
+
+.small-image3 {
+    width: 300px; /* Ancho de 300px */
+    height: 250px; /* Alto de 250px */
+    background-image: url(images/rotativeCube.jpg); /* Usar la imagen como fondo */
+    background-size: cover; /* Ajustar el tamaño del fondo */
+    background-position: center; /* Posición del fondo */
+    background-repeat: no-repeat; /* Evitar la repetición de la imagen */
+}
+
+.small-image4 {
+    width: 300px; /* Ancho de 300px */
+    height: 250px; /* Alto de 250px */
+    background-image: url(images/chessapp.png); /* Usar la imagen como fondo */
+    background-size: cover; /* Ajustar el tamaño del fondo */
+    background-position: center; /* Posición del fondo */
+    background-repeat: no-repeat; /* Evitar la repetición de la imagen */
+    padding-right: 0;
+}
+
+.small-image5 {
+    width: 300px; /* Ancho de 300px */
+    height: 250px; /* Alto de 250px */
+    background-image: url(images/creditCardValidator.png); /* Usar la imagen como fondo */
+    background-size: cover; /* Ajustar el tamaño del fondo */
+    background-position: center; /* Posición del fondo */
+    background-repeat: no-repeat; /* Evitar la repetición de la imagen */
+}
+
+.small-image6 {
+    width: 300px; /* Ancho de 300px */
+    height: 250px; /* Alto de 250px */
+    background-image: url(images/LOGO.png); /* Usar la imagen como fondo */
+    background-size: cover; /* Ajustar el tamaño del fondo */
+    background-position: center; /* Posición del fondo */
+    background-repeat: no-repeat; /* Evitar la repetición de la imagen */
+}
+
+/* Estilos para los elementos hijos directos del contenedor de figura */
+figure > * {
+  grid-area: 1/1;
+  transition: .4s;
+}
+
+/* Estilos para el pie de la figura */
+figure figcaption {
+  display: grid;
+  align-items: end;
+  font-size: 2.3rem;
+  font-weight: bold;
+  color: #0000;
+  padding: .75rem;
+  background: var(--c, #0009);
+  clip-path: inset(0 var(--_i, 100%) 0 0);
+  mask:
+    linear-gradient(#000 0 0),
+    linear-gradient(#000 0 0);
+  mask-composite: exclude;
+  mask-clip: text, padding-box;
+  margin: -1px;
+}
+
+/* Cambios al pasar el cursor sobre la figura */
+figure:hover figcaption {
+  --_i: 0%;
+}
+
+/* Cambios al pasar el cursor sobre la imagen */
+figure:hover img {
+  transform: scale(1.2);
+}
+
+/* Estilos para navegadores que no admiten 'mask-clip: text' */
+@supports not (mask-clip: text) {
+  figure figcaption {
+    mask: none;
+    color: #fff;
+  }
+}
+
 
 /*---------------contact-------------------*/
 
@@ -399,9 +558,13 @@ nav .fa-solid{
 @media only screen and (max-width: 600px){
     
     #header {
+        width: 100%;
+        height: 100vh;
         background-image: url(images/backgroundMobile.png);
+        background-size: cover;
+        background-position: center;
     }
-    
+
     .headerText{
         margin-left: 15px;
         margin-top: 100%;
@@ -506,10 +669,96 @@ nav .fa-solid{
         margin-left: 85px;
     }
 
-    #portfolio {
+    /* #portfolio {
         margin-left: -50px;
         padding-right: 80px;
-    }
+    } */
+
+    .subTitle3 {
+        margin: 0;
+        padding: 0 0 20px 0;
+        font-size: 40px;
+        text-align: center;
+      }
+      
+      /* Update the grid layout for mobile */
+      .work {
+        grid-template-columns: repeat(1, 1fr); /* Display one column */
+        grid-gap: 20px;
+        margin: 075 0 60px; /* Remove margin on mobile */
+        padding: 0;
+        max-width: 350px; /* Set a maximum width for the work section */
+        margin-left: auto; /* Center align the content */
+        margin-right: auto; /* Center align the content */
+        
+      }
+
+      .work2 {
+        margin: 30px 0 0 0;
+        padding: 0;
+        display: grid;
+        grid-template-columns: repeat(1, 20rem);
+      }
+
+      .work2 p {
+        margin: 20px 30px;
+        text-align: left;
+      }
+
+      .work2 i {
+        padding-left: 126px;
+        padding-top: 15px;
+      }
+      
+      /* Update figure styles for mobile */
+      .small-image {
+        width: 200px; /* Ancho de 300px */
+        height: 150px;
+        background-size: cover; /* Ajustar el tamaño del fondo */
+        background-position: center; /* Posición del fondo */
+        background-repeat: no-repeat; /* Evitar la repetición de la imagen */
+        margin: 16px 25px 16px 60px;
+      }
+      .small-image2 {
+        width: 200px; /* Ancho de 300px */
+        height: 150px;
+        background-size: cover; /* Ajustar el tamaño del fondo */
+        background-position: center; /* Posición del fondo */
+        background-repeat: no-repeat; /* Evitar la repetición de la imagen */
+        margin: 16px 35px 16px 60px;
+      }
+      .small-image3 {
+        width: 200px; /* Ancho de 300px */
+        height: 150px;
+        background-size: cover; /* Ajustar el tamaño del fondo */
+        background-position: center; /* Posición del fondo */
+        background-repeat: no-repeat; /* Evitar la repetición de la imagen */
+        margin: 16px 35px 16px 60px;
+      }
+      .small-image4 {
+        width: 200px; /* Ancho de 300px */
+        height: 150px;
+        background-size: cover; /* Ajustar el tamaño del fondo */
+        background-position: center; /* Posición del fondo */
+        background-repeat: no-repeat; /* Evitar la repetición de la imagen */
+        margin: 16px 35px 16px 60px;
+      }
+      .small-image5 {
+        width: 200px; /* Ancho de 300px */
+        height: 150px;
+        background-size: cover; /* Ajustar el tamaño del fondo */
+        background-position: center; /* Posición del fondo */
+        background-repeat: no-repeat; /* Evitar la repetición de la imagen */
+        margin: 16px 35px 16px 60px;
+      }
+      .small-image6 {
+        width: 200px; /* Ancho de 300px */
+        height: 150px;
+        background-size: cover; /* Ajustar el tamaño del fondo */
+        background-position: center; /* Posición del fondo */
+        background-repeat: no-repeat; /* Evitar la repetición de la imagen */
+        margin: 16px 35px 16px 60px;
+      }
 
     .contactLeft, .contactRight{
         flex-basis: 100%;
@@ -517,7 +766,7 @@ nav .fa-solid{
     }
 
     .contactRight {
-        margin-right: -90px;
+        margin-right: 0px;
     }
 
 
@@ -527,7 +776,7 @@ nav .fa-solid{
     }
 
     .btn2{
-        margin-bottom: 10px;
+        margin-bottom: 0;
     }
 
     #msg{
